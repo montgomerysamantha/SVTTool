@@ -22,6 +22,7 @@ namespace SVTTool
 
         public void MakeSemester(string time, List<Course> courses)
         {
+            locals = null;
             locals = new LocalSemester(time, courses);
         }
     }

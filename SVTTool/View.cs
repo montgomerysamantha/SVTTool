@@ -42,6 +42,7 @@ namespace SVTTool
             {
                 System.IO.StreamReader sr = new
                    System.IO.StreamReader(uiOpenFileDialog.FileName);
+                uiLocalTextBox.Text = uiOpenFileDialog.FileName;
                 //read in the file line by line
                 string time = sr.ReadLine();
                 sr.ReadLine();
@@ -59,8 +60,44 @@ namespace SVTTool
 
                 sr.Close();
                 p.MakeSemester(time, courses);
+                return true;
             }
-            return true;
+            else
+            {
+                return false;
+            }
+        }
+
+        private void uiReloadButton_Click(object sender, EventArgs e)
+        {
+            if (uiLocalTextBox.Text != "")
+            {
+                System.IO.StreamReader sr = new
+                   System.IO.StreamReader(uiLocalTextBox.Text);
+
+                //read in the file line by line
+                string time = sr.ReadLine();
+                sr.ReadLine();
+
+                List<Course> courses = new List<Course>();
+                string line;
+                while ((line = sr.ReadLine()) != null)
+                {
+                    string[] arr = line.Split(',');
+                    Course c = new Course(arr[0], arr[1], arr[2], arr[3], arr[4], arr[5], arr[6], arr[7],
+                    arr[8], arr[9], arr[10], arr[11], arr[12], arr[13], arr[14], arr[15],
+                    arr[16], arr[17], arr[18], arr[19], arr[20], arr[21], arr[22]);
+                    courses.Add(c);
+                }
+
+                sr.Close();
+                p.MakeSemester(time, courses);
+                MessageBox.Show("Reload Successful");
+            }
+            else
+            {
+                MessageBox.Show("Please load in a file first before trying to Reload!");
+            }
         }
     }
 }
