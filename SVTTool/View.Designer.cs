@@ -52,6 +52,7 @@
             this.uiReloadButton.TabIndex = 0;
             this.uiReloadButton.Text = "Reload";
             this.uiReloadButton.UseVisualStyleBackColor = true;
+            this.uiReloadButton.Click += new System.EventHandler(this.uiReloadButton_Click);
             // 
             // uiClearButton
             // 
@@ -84,7 +85,7 @@
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.openToolStripMenuItem.Text = "Open...";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.OpenFileClick);
             // 
@@ -117,6 +118,7 @@
             // 
             this.uiLocalTextBox.Location = new System.Drawing.Point(63, 41);
             this.uiLocalTextBox.Name = "uiLocalTextBox";
+            this.uiLocalTextBox.ReadOnly = true;
             this.uiLocalTextBox.Size = new System.Drawing.Size(217, 20);
             this.uiLocalTextBox.TabIndex = 5;
             // 
@@ -124,6 +126,7 @@
             // 
             this.uiKSISTextBox.Location = new System.Drawing.Point(525, 41);
             this.uiKSISTextBox.Name = "uiKSISTextBox";
+            this.uiKSISTextBox.ReadOnly = true;
             this.uiKSISTextBox.Size = new System.Drawing.Size(217, 20);
             this.uiKSISTextBox.TabIndex = 6;
             // 
