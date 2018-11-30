@@ -13,15 +13,16 @@ namespace SVTTool
 {
     public class Presenter
     {
-        //Semester s = new Semester();
+        LocalSemester locals;
+        SISSemester sis;
         public Presenter()
         {
 
         }
 
-        public void MakeSemester(List<Course> courses)
+        public void MakeSemester(string time, List<Course> courses)
         {
-            //s = new Semester(courses);
+            locals = new LocalSemester(time, courses);
         }
     }
 }

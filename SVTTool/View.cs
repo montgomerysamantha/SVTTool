@@ -26,13 +26,24 @@ namespace SVTTool
 
         private void OpenFileClick(object sender, EventArgs e)
         {
+            LoadSemesterFile();
+            MessageBox.Show("Read in file");
+        }
+
+        private void uiAboutMenu_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Version 1.0 by Samantha Montgomery and Trent Gierhart");
+        }
+
+        private bool LoadSemesterFile()
+        {
             uiOpenFileDialog.Filter = "CSV files | *.csv";
             if (uiOpenFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 System.IO.StreamReader sr = new
                    System.IO.StreamReader(uiOpenFileDialog.FileName);
                 //read in the file line by line
-                sr.ReadLine();
+                string time = sr.ReadLine();
                 sr.ReadLine();
 
                 List<Course> courses = new List<Course>();
@@ -47,14 +58,9 @@ namespace SVTTool
                 }
 
                 sr.Close();
-                MessageBox.Show("Read in file");
-                p.MakeSemester(courses);
             }
-        }
-
-        private void uiAboutMenu_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Version 1.0 by Samantha Montgomery and Trent Gierhart");
+            p.MakeSemester(time, courses);
+            return true;
         }
     }
 }

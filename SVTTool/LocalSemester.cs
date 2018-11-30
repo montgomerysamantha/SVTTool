@@ -27,7 +27,8 @@ public class LocalSemester : Semester
     private List<int> _unitsMax;
     private List<string> _classAssnComponent;
 
-    public LocalSemester()
+    public LocalSemester(string semester, List<Course> courses)
 	{
+
 	}
 }
