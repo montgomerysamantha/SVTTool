@@ -32,12 +32,15 @@
             this.uiClearButton = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.uiFileMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.uiAboutMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.uiLocalLabel = new System.Windows.Forms.Label();
             this.uiKSISLabel = new System.Windows.Forms.Label();
             this.uiLocalTextBox = new System.Windows.Forms.TextBox();
             this.uiKSISTextBox = new System.Windows.Forms.TextBox();
             this.uiDisplayTextBox = new System.Windows.Forms.TextBox();
+            this.uiOpenFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,9 +75,18 @@
             // 
             // uiFileMenu
             // 
+            this.uiFileMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.openToolStripMenuItem});
             this.uiFileMenu.Name = "uiFileMenu";
             this.uiFileMenu.Size = new System.Drawing.Size(37, 20);
             this.uiFileMenu.Text = "File";
+            // 
+            // openToolStripMenuItem
+            // 
+            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.openToolStripMenuItem.Text = "Open...";
+            this.openToolStripMenuItem.Click += new System.EventHandler(this.OpenFileClick);
             // 
             // uiAboutMenu
             // 
@@ -122,6 +134,14 @@
             this.uiDisplayTextBox.Size = new System.Drawing.Size(762, 377);
             this.uiDisplayTextBox.TabIndex = 7;
             // 
+            // uiOpenFileDialog
+            // 
+            this.uiOpenFileDialog.FileName = "File";
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // uiSVTForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -158,6 +178,9 @@
         private System.Windows.Forms.TextBox uiLocalTextBox;
         private System.Windows.Forms.TextBox uiKSISTextBox;
         private System.Windows.Forms.TextBox uiDisplayTextBox;
+        private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
+        private System.Windows.Forms.OpenFileDialog uiOpenFileDialog;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
 
