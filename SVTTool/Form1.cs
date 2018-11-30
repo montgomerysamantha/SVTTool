@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace SVTTool
 {
-    public partial class Form1 : Form
+    public partial class uiSVTForm : Form
     {
-        public Form1()
+        public uiSVTForm()
         {
             InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
