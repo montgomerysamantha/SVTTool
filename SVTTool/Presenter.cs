@@ -17,7 +17,7 @@ namespace SVTTool
         SISSemester sis;
         public Presenter()
         {
-
+            
         }
 
         public void MakeSemester(string time, List<Course> courses)
