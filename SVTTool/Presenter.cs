@@ -13,9 +13,15 @@ namespace SVTTool
 {
     public class Presenter
     {
+        //Semester s = new Semester();
         public Presenter()
         {
 
+        }
+
+        public void MakeSemester(List<Course> courses)
+        {
+            //s = new Semester(courses);
         }
     }
 }

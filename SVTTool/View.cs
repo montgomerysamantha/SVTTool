@@ -13,6 +13,7 @@ namespace SVTTool
 {
     public partial class uiSVTForm : Form
     {
+        Presenter p = new Presenter();
         public uiSVTForm()
         {
             InitializeComponent();
@@ -31,17 +32,29 @@ namespace SVTTool
                 System.IO.StreamReader sr = new
                    System.IO.StreamReader(uiOpenFileDialog.FileName);
                 //read in the file line by line
-                StringBuilder sb = new StringBuilder();
+                sr.ReadLine();
+                sr.ReadLine();
+
+                List<Course> courses = new List<Course>();
                 string line;
                 while ((line = sr.ReadLine()) != null)
                 {
-                    sb.Append(line);
+                    string[] arr = line.Split(',');
+                    Course c = new Course(arr[0], arr[1], arr[2], arr[3], arr[4], arr[5], arr[6], arr[7],
+                    arr[8], arr[9], arr[10], arr[11], arr[12], arr[13], arr[14], arr[15],
+                    arr[16], arr[17], arr[18], arr[19], arr[20], arr[21], arr[22]);
+                    courses.Add(c);
                 }
-                uiDisplayTextBox.Text = null;
-                uiDisplayTextBox.Text = sb.ToString();
+
                 sr.Close();
                 MessageBox.Show("Read in file");
+                p.MakeSemester(courses);
             }
+        }
+
+        private void uiAboutMenu_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Version 1.0 by Samantha Montgomery and Trent Gierhart");
         }
     }
 }

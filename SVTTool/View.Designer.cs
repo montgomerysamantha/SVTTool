@@ -93,6 +93,7 @@
             this.uiAboutMenu.Name = "uiAboutMenu";
             this.uiAboutMenu.Size = new System.Drawing.Size(52, 20);
             this.uiAboutMenu.Text = "About";
+            this.uiAboutMenu.Click += new System.EventHandler(this.uiAboutMenu_Click);
             // 
             // uiLocalLabel
             // 
