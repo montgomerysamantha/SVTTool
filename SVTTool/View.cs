@@ -58,8 +58,8 @@ namespace SVTTool
                 }
 
                 sr.Close();
+                p.MakeSemester(time, courses);
             }
-            p.MakeSemester(time, courses);
             return true;
         }
     }
