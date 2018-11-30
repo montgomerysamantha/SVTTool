@@ -1,8 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 
 public class SISSemester : Semester
 {
-	public SISSemester()
+    private List<Course> _courses;
+
+    public SISSemester()
 	{
-	}
+
+    }
 }
