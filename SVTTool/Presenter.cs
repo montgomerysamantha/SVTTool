@@ -31,5 +31,10 @@ namespace SVTTool
             sis = null;
             sis = new SISSemester(time, courses);
         }
+
+        public void Clear(){
+            locals = null;
+            sis = null;
+        }
     }
 }

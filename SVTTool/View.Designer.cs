@@ -62,6 +62,7 @@
             this.uiClearButton.TabIndex = 1;
             this.uiClearButton.Text = "Clear";
             this.uiClearButton.UseVisualStyleBackColor = true;
+            this.uiClearButton.Click += new System.EventHandler(this.uiClearButton_Click);
             // 
             // menuStrip1
             // 

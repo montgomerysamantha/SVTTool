@@ -127,5 +127,12 @@ namespace SVTTool
                 MessageBox.Show("Please load in a file first before trying to Reload!");
             }
         }
+
+        private void uiClearButton_Click(object sender, EventArgs e)
+        {
+            uiLocalTextBox.Text = "";
+            uiKSISTextBox.Text = "";
+            p.Clear();
+        }
     }
 }
