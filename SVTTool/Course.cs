@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Text;
+
 
 public class Course
 {
@@ -82,5 +84,12 @@ public class Course
         if (_unitsMax != c._unitsMax) return false;
         if (_classAssnComponent != c._classAssnComponent) return false;
         return true;
+    }
+
+    public override string ToString()
+    {
+        StringBuilder sb = new StringBuilder();
+        sb.Append("Section " + _subject + " " + _catalogNbr + " Section " + _section + " ");
+        return sb.ToString();
     }
 }

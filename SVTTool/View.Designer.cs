@@ -33,6 +33,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.uiFileMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verifySemestersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.uiAboutMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.uiLocalLabel = new System.Windows.Forms.Label();
             this.uiKSISLabel = new System.Windows.Forms.Label();
@@ -41,7 +42,6 @@
             this.uiDisplayTextBox = new System.Windows.Forms.TextBox();
             this.uiOpenFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.verifySemestersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -88,9 +88,16 @@
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.openToolStripMenuItem.Text = "Open Local File";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.OpenFileClick);
+            // 
+            // verifySemestersToolStripMenuItem
+            // 
+            this.verifySemestersToolStripMenuItem.Name = "verifySemestersToolStripMenuItem";
+            this.verifySemestersToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.verifySemestersToolStripMenuItem.Text = "Verify Semesters";
+            this.verifySemestersToolStripMenuItem.Click += new System.EventHandler(this.verifySemestersToolStripMenuItem_Click);
             // 
             // uiAboutMenu
             // 
@@ -138,6 +145,7 @@
             this.uiDisplayTextBox.Location = new System.Drawing.Point(0, 67);
             this.uiDisplayTextBox.Multiline = true;
             this.uiDisplayTextBox.Name = "uiDisplayTextBox";
+            this.uiDisplayTextBox.ReadOnly = true;
             this.uiDisplayTextBox.Size = new System.Drawing.Size(762, 377);
             this.uiDisplayTextBox.TabIndex = 7;
             // 
@@ -148,13 +156,6 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // verifySemestersToolStripMenuItem
-            // 
-            this.verifySemestersToolStripMenuItem.Name = "verifySemestersToolStripMenuItem";
-            this.verifySemestersToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.verifySemestersToolStripMenuItem.Text = "Verify Semesters";
-            this.verifySemestersToolStripMenuItem.Click += new System.EventHandler(this.verifySemestersToolStripMenuItem_Click);
             // 
             // uiSVTForm
             // 

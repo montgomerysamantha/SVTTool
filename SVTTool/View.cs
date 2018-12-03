@@ -58,6 +58,11 @@ namespace SVTTool
                     courses.Add(c);
                 }
 
+                foreach (Course test in courses)
+                {
+                    uiDisplayTextBox.Text += test.ToString() + Environment.NewLine;
+                }
+
                 sr.Close();
                 p.MakeLocalSemester(time, courses);
                 return true;
@@ -92,6 +97,12 @@ namespace SVTTool
                 }
 
                 sr.Close();
+
+                foreach (Course test in courses)
+                {
+                    uiDisplayTextBox.Text += test.ToString() + Environment.NewLine;
+                }
+
                 p.MakeLocalSemester(time, courses);
                 return true;
             }
