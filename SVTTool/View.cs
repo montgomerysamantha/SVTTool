@@ -17,6 +17,7 @@ namespace SVTTool
         public uiSVTForm()
         {
             InitializeComponent();
+            LoadSISFile();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -26,7 +27,7 @@ namespace SVTTool
 
         private void OpenFileClick(object sender, EventArgs e)
         {
-            LoadSemesterFile();
+            LoadLocalSemesterFile();
             MessageBox.Show("Read in file");
         }
 
@@ -35,7 +36,7 @@ namespace SVTTool
             MessageBox.Show("Version 1.0 by Samantha Montgomery and Trent Gierhart");
         }
 
-        private bool LoadSemesterFile()
+        private bool LoadLocalSemesterFile()
         {
             uiOpenFileDialog.Filter = "CSV files | *.csv";
             if (uiOpenFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
@@ -59,13 +60,40 @@ namespace SVTTool
                 }
 
                 sr.Close();
-                p.MakeSemester(time, courses);
+                p.MakeLocalSemester(time, courses);
                 return true;
             }
             else
             {
                 return false;
             }
+        }
+
+        private bool LoadSISFile()
+        {
+            string fileName = @"C:\Users\samant4\Downloads\CLSSCHED 2185 NEW.CSV";
+            uiKSISTextBox.Text = fileName;
+            System.IO.StreamReader sr = new
+                System.IO.StreamReader(fileName);
+
+            //read in the file line by line
+            string time = sr.ReadLine();
+            sr.ReadLine();
+
+            List<Course> courses = new List<Course>();
+            string line;
+            while ((line = sr.ReadLine()) != null)
+            {
+                string[] arr = line.Split(',');
+                Course c = new Course(arr[0], arr[1], arr[2], arr[3], arr[4], arr[5], arr[6], arr[7],
+                arr[8], arr[9], arr[10], arr[11], arr[12], arr[13], arr[14], arr[15],
+                arr[16], arr[17], arr[18], arr[19], arr[20], arr[21], arr[22]);
+                courses.Add(c);
+            }
+
+            sr.Close();
+            p.MakeSISSemester(time, courses);
+            return true;
         }
 
         private void uiReloadButton_Click(object sender, EventArgs e)
@@ -91,7 +119,7 @@ namespace SVTTool
                 }
 
                 sr.Close();
-                p.MakeSemester(time, courses);
+                p.MakeLocalSemester(time, courses);
                 MessageBox.Show("Reload Successful");
             }
             else

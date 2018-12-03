@@ -20,10 +20,16 @@ namespace SVTTool
             
         }
 
-        public void MakeSemester(string time, List<Course> courses)
+        public void MakeLocalSemester(string time, List<Course> courses)
         {
             locals = null;
             locals = new LocalSemester(time, courses);
+        }
+
+        public void MakeSISSemester(string time, List<Course> courses)
+        {
+            sis = null;
+            sis = new SISSemester(time, courses);
         }
     }
 }
