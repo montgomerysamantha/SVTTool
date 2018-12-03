@@ -41,6 +41,7 @@
             this.uiDisplayTextBox = new System.Windows.Forms.TextBox();
             this.uiOpenFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.verifySemestersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -78,7 +79,8 @@
             // uiFileMenu
             // 
             this.uiFileMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.openToolStripMenuItem});
+            this.openToolStripMenuItem,
+            this.verifySemestersToolStripMenuItem});
             this.uiFileMenu.Name = "uiFileMenu";
             this.uiFileMenu.Size = new System.Drawing.Size(37, 20);
             this.uiFileMenu.Text = "File";
@@ -86,8 +88,8 @@
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
-            this.openToolStripMenuItem.Text = "Open...";
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.openToolStripMenuItem.Text = "Open Local File";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.OpenFileClick);
             // 
             // uiAboutMenu
@@ -147,6 +149,13 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // verifySemestersToolStripMenuItem
+            // 
+            this.verifySemestersToolStripMenuItem.Name = "verifySemestersToolStripMenuItem";
+            this.verifySemestersToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.verifySemestersToolStripMenuItem.Text = "Verify Semesters";
+            this.verifySemestersToolStripMenuItem.Click += new System.EventHandler(this.verifySemestersToolStripMenuItem_Click);
+            // 
             // uiSVTForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -186,6 +195,7 @@
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
         private System.Windows.Forms.OpenFileDialog uiOpenFileDialog;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.ToolStripMenuItem verifySemestersToolStripMenuItem;
     }
 }
 
