@@ -146,6 +146,7 @@
             this.uiDisplayTextBox.Multiline = true;
             this.uiDisplayTextBox.Name = "uiDisplayTextBox";
             this.uiDisplayTextBox.ReadOnly = true;
+            this.uiDisplayTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.uiDisplayTextBox.Size = new System.Drawing.Size(762, 377);
             this.uiDisplayTextBox.TabIndex = 7;
             // 

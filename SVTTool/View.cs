@@ -27,7 +27,7 @@ namespace SVTTool
         private void OpenFileClick(object sender, EventArgs e)
         {
             LoadLocalSemesterFile();
-            MessageBox.Show("Read in file");
+            //MessageBox.Show("Read in file");
         }
 
         private void uiAboutMenu_Click(object sender, EventArgs e)
@@ -57,14 +57,14 @@ namespace SVTTool
                     arr[16], arr[17], arr[18], arr[19], arr[20], arr[21], arr[22]);
                     courses.Add(c);
                 }
-
+                /* testing code
                 foreach (Course test in courses)
                 {
                     uiDisplayTextBox.Text += test.ToString() + Environment.NewLine;
-                }
+                }*/
 
                 sr.Close();
-                p.MakeLocalSemester(time, courses);
+                p.MakeSISSemester(time, courses);
                 return true;
             }
             else
@@ -97,11 +97,11 @@ namespace SVTTool
                 }
 
                 sr.Close();
-
+                /* testing code
                 foreach (Course test in courses)
                 {
                     uiDisplayTextBox.Text += test.ToString() + Environment.NewLine;
-                }
+                }*/
 
                 p.MakeLocalSemester(time, courses);
                 return true;
@@ -136,7 +136,7 @@ namespace SVTTool
 
                 sr.Close();
                 p.MakeLocalSemester(time, courses);
-                MessageBox.Show("Reload Successful");
+                //MessageBox.Show("Reload Successful");
             }
             else
             {
@@ -147,12 +147,15 @@ namespace SVTTool
         private void verifySemestersToolStripMenuItem_Click(object sender, EventArgs e)
         {
             LoadSISFile();
+            string verification = p.Verify();
+            uiDisplayTextBox.Text = verification;
         }
 
         private void uiClearButton_Click(object sender, EventArgs e)
         {
             uiLocalTextBox.Text = "";
             uiKSISTextBox.Text = "";
+            uiDisplayTextBox.Text = "";
             p.Clear();
         }
     }

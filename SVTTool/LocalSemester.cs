@@ -11,4 +11,9 @@ public class LocalSemester : Semester
         _semesterName = semName;
         _courses = courses;
 	}
+
+    public List<Course> GetCourses()
+    {
+        return _courses;
+    }
 }

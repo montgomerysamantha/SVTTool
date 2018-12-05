@@ -4,10 +4,10 @@ using System.Text;
 
 public class Course
 {
-    private string _subject { get; }
-    private string _catalogNbr { get; }
+    private string _subject;
+    private string _catalogNbr;
     private string _classDescr { get; }
-    private string _section { get; }
+    private string _section;
     private string _instructor { get; }
     private string _consent { get; }
     private string _enrlCap { get; }
@@ -91,5 +91,20 @@ public class Course
         StringBuilder sb = new StringBuilder();
         sb.Append("Section " + _subject + " " + _catalogNbr + " Section " + _section + " ");
         return sb.ToString();
+    }
+
+    public string GetSubject()
+    {
+        return _subject;
+    }
+
+    public string GetCatalogNbr()
+    {
+        return _catalogNbr;
+    }
+
+    public string GetSection()
+    {
+        return _section;
     }
 }
