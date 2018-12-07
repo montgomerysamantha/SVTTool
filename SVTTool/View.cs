@@ -138,6 +138,11 @@ namespace SVTTool
                 sr.Close();
                 p.MakeLocalSemester(time, courses);
 
+                if (uiKSISTextBox.Text == "")
+                {
+                    MessageBox.Show("KSIS File was not reloaded because it does not exist");
+                    return;
+                }
                 FileInfo f1 = new FileInfo(uiKSISTextBox.Text);
 
                 if (f1.Exists)
