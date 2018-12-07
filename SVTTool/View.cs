@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 using SVTTool;
 
 namespace SVTTool
@@ -136,6 +137,15 @@ namespace SVTTool
 
                 sr.Close();
                 p.MakeLocalSemester(time, courses);
+
+                FileInfo f1 = new FileInfo(uiKSISTextBox.Text);
+
+                if (f1.Exists)
+                {
+                    string verification = p.Verify();
+                    uiDisplayTextBox.Text = verification;
+                }
+
                 //MessageBox.Show("Reload Successful");
             }
             else
