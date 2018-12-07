@@ -42,7 +42,7 @@ namespace SVTTool
             StringBuilder sb = new StringBuilder();
             List<Course> sisCourses = sis.GetCourses();
             List<Course> localCourses = locals.GetCourses();
-            bool error = false;
+            //bool error = false;
             for (int i = 0; i < sisCourses.Count; i++) //check for courses in SIS but not Local
             {
                 bool inLocal = false;
@@ -65,7 +65,7 @@ namespace SVTTool
                     sb.Append(sisCourses[i].ToString());
                     sb.Append(" not found in current semester!");
                     sb.Append(Environment.NewLine);
-                    error = true;
+                    //error = true;
                 }
             }
 
@@ -87,7 +87,7 @@ namespace SVTTool
                         sb.Append(localCourses[i].ToString());
                         sb.Append(" has been changed in the current semester.");
                         sb.Append(Environment.NewLine);
-                        error = true;
+                        //error = true;
                     }
                 }
                 if (!inSis)
@@ -96,7 +96,7 @@ namespace SVTTool
                     sb.Append(localCourses[i].ToString());
                     sb.Append(" is new in current semester!");
                     sb.Append(Environment.NewLine);
-                    error = true;
+                    //error = true;
                 }
             }
 
